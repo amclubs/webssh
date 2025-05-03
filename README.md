@@ -54,6 +54,9 @@ webssh 页面工具，解决ssh直接可以通过浏览器连接，增加生成s
 - 6、设置开机自动启动webssh **(WorkingDirectory/certfile/keyfile证书目录换成你服务器存储的目录和文件名称)**：
 	1、写一个 service 文件 webssh.service
 	```
+	vi /etc/systemd/system/webssh.service
+	```
+	```
 	[Unit]
 	Description=WebSSH Service
 	After=network.target
