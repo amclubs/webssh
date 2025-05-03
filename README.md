@@ -13,9 +13,9 @@ webssh 页面工具，解决ssh直接可以通过浏览器连接，增加生成s
 <summary>点击展开/收起</summary>
 
 - 1、下载webssh安装包命令：
-```
-git clone https://github.com/amclubs/webssh
-```
+	```
+	git clone https://github.com/amclubs/webssh
+	```
 
 - 2、**绑定Cloudflare域名生成证书**,并上传到服务器指定目录 <a href="https://youtu.be/cI36vtXuQrM">[点击观看视频教程]</a>
 	```
@@ -45,48 +45,48 @@ git clone https://github.com/amclubs/webssh
 	```
 
 - 5、访问webssh：
-```
-https://域名:端口
-```
+	```
+	https://域名:端口
+	```
 
 - 6、设置开机自动启动webssh **(WorkingDirectory/certfile/keyfile证书目录换成你服务器存储的目录和文件名称)**：
-1、写一个 service 文件 webssh.service
-```
-[Unit]
-Description=WebSSH Service
-After=network.target
+	1、写一个 service 文件 webssh.service
+	```
+	[Unit]
+	Description=WebSSH Service
+	After=network.target
 
-[Service]
-Type=simple
-WorkingDirectory=/root/webssh
-ExecStart=/usr/bin/python3 run.py --certfile='/root/cert/809098.pem' --keyfile='/root/cert/809098.key' --sslport=8443
-Restart=always
-User=root
+	[Service]
+	Type=simple
+	WorkingDirectory=/root/webssh
+	ExecStart=/usr/bin/python3 run.py --certfile='/root/cert/809098.pem' --keyfile='/root/cert/809098.key' --sslport=8443
+	Restart=always
+	User=root
 
-[Install]
-WantedBy=multi-user.target
-```
+	[Install]
+	WantedBy=multi-user.target
+	```
 
-2、让服务生效
-```
-systemctl daemon-reload
-systemctl enable webssh
-systemctl start webssh
-```
+	2、让服务生效
+	```
+	systemctl daemon-reload
+	systemctl enable webssh
+	systemctl start webssh
+	```
 
-3、管理服务
-查看状态
-```
-systemctl status webssh    
-```
-重启
-```
-systemctl restart webssh
-```
-停止
-```
-systemctl stop webssh
-```
+	3、管理服务
+	查看状态
+	```
+	systemctl status webssh    
+	```
+	重启
+	```
+	systemctl restart webssh
+	```
+	停止
+	```
+	systemctl stop webssh
+	```
 </details>
 
 ## 二、 koyeb部署方法(计划中)
