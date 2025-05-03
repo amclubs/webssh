@@ -11,6 +11,7 @@ webssh 页面工具，解决ssh直接可以通过浏览器连接，增加生成s
 ## 一、VPS部署方法
 <details>
 <summary>点击展开/收起</summary>
+
 - 1、下载webssh安装包命令：
 ```
 git clone https://github.com/amclubs/webssh
